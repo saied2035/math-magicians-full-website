@@ -1,5 +1,5 @@
 {
-  "name": "react-initialization",
+  "name": "math-magicians-full-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saied2035/react-initialization.git"
+    "url": "git+https://github.com/saied2035/math-magicians-full-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saied2035/react-initialization/issues"
+    "url": "https://github.com/saied2035/math-magicians-full-website/issues"
   },
-  "homepage": "https://saied2035.github.io/react-initialization",
+  "homepage": "https://saied2035.github.io/math-magicians-full-website",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.17.0",
@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
+    "big.js": "^6.1.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -1,0 +1,66 @@
+#calculator {
+  width: 60vw;
+  margin: 4vh auto;
+}
+
+small {
+  text-align: center;
+  margin-bottom: 2px;
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#result-section {
+  background: #858694;
+  color: #fff;
+  font-size: 40px;
+  padding: 2rem;
+}
+
+#result {
+  display: block;
+  text-align: right;
+}
+
+#opertations-section {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 30px;
+}
+
+.row {
+  width: 100%;
+  border-top: 1.5px solid #bababa;
+  border-bottom: 2px solid #bababa;
+}
+
+button {
+  border: none;
+}
+
+.cell {
+  font-size: 30px;
+  text-align: center;
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 1.5rem 0;
+  width: 15vw;
+  box-sizing: border-box;
+  border-right: 1px solid #bababa;
+}
+
+.cell:last-child {
+  background: #f5913e;
+  border-right: none;
+}
+
+.row:last-child > .cell:nth-last-child(3) {
+  width: 30vw;
+}
+
+span {
+  pointer-events: auto;
+  cursor: default;
+}
