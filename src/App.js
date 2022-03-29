@@ -4,6 +4,7 @@ import Calculator from './components/Calculator/Calculator';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Quote from './components/Quote/Quote';
+import './App.css';
 
 class App extends Component {
   constructor() {

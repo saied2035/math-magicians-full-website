@@ -1,6 +1,6 @@
 #calculator {
-  width: 60vw;
-  margin: 4vh auto;
+  width: 40vw;
+  margin: 4vh 2% 0 auto;
 }
 
 small {
@@ -12,8 +12,9 @@ small {
 }
 
 #result-section {
-  background: #858694;
-  color: #fff;
+  background: #1B2021;
+  color: #E3DCC2;
+  font-weight: 600;
   font-size: 40px;
   padding: 2rem;
 }
@@ -32,8 +33,7 @@ small {
 
 .row {
   width: 100%;
-  border-top: 1.5px solid #bababa;
-  border-bottom: 2px solid #bababa;
+  border-bottom: 1px solid #561d25;
 }
 
 button {
@@ -41,23 +41,25 @@ button {
 }
 
 .cell {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   display: inline-block;
-  background: #e0e0e0;
+  background: #A6A867;
+  color: #1B2021;
+  font-weight: 600;
   padding: 1.5rem 0;
-  width: 15vw;
+  width: 10vw;
   box-sizing: border-box;
-  border-right: 1px solid #bababa;
+  border-right: 1px solid #561d25;
 }
 
 .cell:last-child {
-  background: #f5913e;
+  background: #E3DC95;
   border-right: none;
 }
 
 .row:last-child > .cell:nth-last-child(3) {
-  width: 30vw;
+  width: 20vw;
 }
 
 span {

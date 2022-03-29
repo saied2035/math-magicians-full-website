@@ -1,22 +1,23 @@
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => (
-  <div className="flex justify-between">
+  <div id="Navbar" className="flex justify-between">
     <h1 className="ml3">Math Magicians</h1>
-    <nav className="mr5 self-center f4 b">
+    <nav id="NavbarList" className="mr5 self-center f4 b">
       <ul className="list flex">
         <li className="mr5">
-          <NavLink className="no-underline gold" to="/">
+          <NavLink className="NavLink no-underline" to="/">
             Home
           </NavLink>
         </li>
         <li className="mr5">
-          <NavLink className="no-underline gold" to="Calculator">
+          <NavLink className="NavLink no-underline" to="Calculator">
             Calculator
           </NavLink>
         </li>
         <li className="mr5">
-          <NavLink className="no-underline gold" to="Quote">
+          <NavLink className="NavLink no-underline" to="Quote">
             Quote
           </NavLink>
         </li>
