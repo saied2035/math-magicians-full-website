@@ -35,13 +35,15 @@ const Calculator = (props) => {
   };
   const { symbols } = props;
   return (
-    <div id="calculator">
-      <small>{error}</small>
-      <section id="result-section">
-        <span id="result">{!result.length ? 0 : result}</span>
-      </section>
-      <ul id="opertations-section">
-        {
+    <>
+      <h2 className="ma0 tc mt5 dib w-40 f2">{'Let\'s do some math.'}</h2>
+      <div id="calculator">
+        <small className="f4">{error}</small>
+        <section id="result-section">
+          <span id="result">{!result.length ? 0 : result}</span>
+        </section>
+        <ul id="opertations-section">
+          {
            symbols.map((row) => (
              <li className="row" key={row[0]}>
                <button type="button" value={row[0]} onClick={handleCalculations} className="cell">
@@ -65,8 +67,9 @@ const Calculator = (props) => {
              </li>
            ))
            }
-      </ul>
-    </div>
+        </ul>
+      </div>
+    </>
   );
 };
 

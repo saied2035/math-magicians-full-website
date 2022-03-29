@@ -1,8 +1,16 @@
 @import url('http://fonts.cdnfonts.com/css/sailor-vito');
 
-.home-text {
-  color: #1b2021;
-  font-weight: 600;
+.Quote,
+.QuoteAuthor {
   font-family: 'Sailor Vito', sans-serif;
   letter-spacing: 1.5px;
+}
+
+.Quote {
+  padding: 0 1.5rem;
+  margin-top: 40vh;
+}
+
+.QuoteAuthor {
+  font-weight: bolder;
 }
