@@ -1,0 +1,8 @@
+@import url('http://fonts.cdnfonts.com/css/sailor-vito');
+
+.home-text {
+  color: #1b2021;
+  font-weight: 600;
+  font-family: 'Sailor Vito', sans-serif;
+  letter-spacing: 1.5px;
+}
