@@ -38,7 +38,7 @@ const Calculator = (props) => {
     <>
       <h2 className="ma0 tc mt5 dib w-40 f2">{'Let\'s do some math.'}</h2>
       <div id="calculator">
-        <small className="f4">{error}</small>
+        <small className="f5">{error}</small>
         <section id="result-section">
           <span id="result">{!result.length ? 0 : result}</span>
         </section>
