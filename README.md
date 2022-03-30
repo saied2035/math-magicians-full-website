@@ -18,7 +18,11 @@ simple calculator using React
 - JSX & React
 - React&Redux linters
 
+# Live Demo
 
+- [Heroku Live Demo](https://math-magicians-full-website.herokuapp.com/)
+
+- [Netlify Live Demo](https://math-magic-site.netlify.app/)
 
 ## Getting Started
 
