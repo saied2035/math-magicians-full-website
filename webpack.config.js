@@ -29,11 +29,6 @@ module.exports = {
       use: {
         loader: 'babel-loader',
       },
-
-    },
-    {
-        test: /_redirects/,
-        loader: 'file',
     },
     {
       test: /\.css$/i,
@@ -54,5 +49,6 @@ module.exports = {
   },
   devServer: {
     static: './build',
+    historyApiFallback: true,
   },
 };
