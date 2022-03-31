@@ -40,7 +40,7 @@ const Calculator = (props) => {
       <div id="calculator">
         <small className="f5">{error}</small>
         <section id="result-section">
-          <span id="result">{!result.length ? 0 : result}</span>
+          <span role="math" id="result">{!result.length ? 0 : result}</span>
         </section>
         <ul id="opertations-section">
           {
