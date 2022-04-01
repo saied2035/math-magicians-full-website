@@ -49,7 +49,7 @@ const updateComponent = (whatToCalculate, container) => {
   />, { container });
 };
 
-describe('snapshot', () => {
+describe('snapshot  and AC button', () => {
   const calculator = render(<Calculator
     symbols={symbols}
     whatToCalculate={whatToCalculate}
@@ -58,11 +58,27 @@ describe('snapshot', () => {
 
   it('take snapshot', () => {
     expect(calculator).toMatchSnapshot();
-    expect(render(<Calculator
-      symbols={[]}
-      whatToCalculate={whatToCalculate}
-      calculationsHandler={handleCalculations}
-    />)).toMatchSnapshot();
+  });
+  it('Check AC button', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    expect(screen.getByRole('math')).toHaveTextContent('8+4');
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('AC'));
+
+    expect(screen.getByRole('math')).toHaveTextContent('0');
   });
 });
 
