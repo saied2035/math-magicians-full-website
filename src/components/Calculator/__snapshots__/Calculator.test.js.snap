@@ -15,6 +15,7 @@ Object {
       >
         <small
           class="f5"
+          role="note"
         />
         <section
           id="result-section"
@@ -198,6 +199,7 @@ Object {
     >
       <small
         class="f5"
+        role="note"
       />
       <section
         id="result-section"
@@ -438,6 +440,7 @@ Object {
       >
         <small
           class="f5"
+          role="note"
         />
         <section
           id="result-section"
@@ -620,6 +623,7 @@ Object {
       >
         <small
           class="f5"
+          role="note"
         />
         <section
           id="result-section"
@@ -648,6 +652,7 @@ Object {
     >
       <small
         class="f5"
+        role="note"
       />
       <section
         id="result-section"

@@ -59,10 +59,10 @@ describe('snapshot', () => {
   it('take snapshot', () => {
     expect(calculator).toMatchSnapshot();
     expect(render(<Calculator
-    symbols={[]}
-    whatToCalculate={whatToCalculate}
-    calculationsHandler={handleCalculations}
-  />)).toMatchSnapshot()
+      symbols={[]}
+      whatToCalculate={whatToCalculate}
+      calculationsHandler={handleCalculations}
+    />)).toMatchSnapshot();
   });
 });
 
@@ -374,7 +374,7 @@ describe('division', () => {
 
     fireEvent.click(screen.getByText('0'));
 
-    updateComponent(whatToCalculate, container);    
+    updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('÷'));
 
@@ -416,7 +416,7 @@ describe('multiple operations', () => {
 
     fireEvent.click(screen.getByText('0'));
 
-    updateComponent(whatToCalculate, container);    
+    updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('+'));
 
@@ -439,7 +439,7 @@ describe('multiple operations', () => {
     updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('x'));
-      
+
     updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('4'));
@@ -448,7 +448,7 @@ describe('multiple operations', () => {
 
     fireEvent.click(screen.getByText('÷'));
 
-    updateComponent(whatToCalculate, container);    
+    updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('1'));
 
@@ -460,7 +460,7 @@ describe('multiple operations', () => {
 
     fireEvent.click(screen.getByText('0'));
 
-    updateComponent(whatToCalculate, container);    
+    updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('+'));
 
@@ -475,7 +475,7 @@ describe('multiple operations', () => {
     updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('9'));
-   
+
     updateComponent(whatToCalculate, container);
 
     fireEvent.click(screen.getByText('2'));
@@ -492,5 +492,75 @@ describe('multiple operations', () => {
     fireEvent.click(screen.getByText('='));
 
     expect(screen.getByRole('math').textContent).toBe('7');
+  });
+});
+
+describe('Error messages', () => {
+  it('enter an operation without existing number', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe('Please, add number frist.');
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe('Please, add number frist.');
+
+    fireEvent.click(screen.getByText('+/-'));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe('Please, add number frist.');
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe('Please, add number frist.');
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe('Please, add number frist.');
+
+    fireEvent.click(screen.getByText('='));
+
+    updateComponent(whatToCalculate, container);
+
+    expect(screen.getByRole('note').textContent).toBe("you didn't enter a valid operation");
+  });
+
+  it('enter a number without operation', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('note').textContent).toBe('nothing to calculate keep typing!!');
+  });
+
+  it('invalid operation', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('note').textContent).toBe("you didn't enter a valid operation");
   });
 });
