@@ -405,3 +405,92 @@ describe('division', () => {
     expect(screen.getByRole('math').textContent).toBe('21.5');
   });
 });
+
+describe('multiple operations', () => {
+  it('multiple operation', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);    
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('3'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+      
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);    
+
+    fireEvent.click(screen.getByText('1'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);    
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('.'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('9'));
+   
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('+'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math').textContent).toBe('7');
+  });
+});
