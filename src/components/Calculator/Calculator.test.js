@@ -279,7 +279,7 @@ describe('maltiplcation', () => {
     expect(screen.getByRole('math')).toHaveTextContent('90');
   });
 
-  it('multiple subtract', () => {
+  it('multiple multiplcation', () => {
     const container = renderComponent();
 
     fireEvent.click(screen.getByText('2'));
@@ -313,5 +313,95 @@ describe('maltiplcation', () => {
     fireEvent.click(screen.getByText('='));
 
     expect(screen.getByRole('math')).toHaveTextContent('360');
+  });
+});
+
+describe('division', () => {
+  it('divide two numbers 1', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('4');
+  });
+
+  it('divide two numbers  2 ', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('5');
+  });
+
+  it('multiple division', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('6'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);    
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('5'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('÷'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math').textContent).toBe('21.5');
   });
 });
