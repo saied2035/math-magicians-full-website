@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check all links are listed 1`] = `
+<div
+  className="flex justify-between"
+  id="Navbar"
+>
+  <h1
+    className="ml3"
+  >
+    Math Magicians
+  </h1>
+  <nav
+    className="mr5 self-center f4 b"
+    id="NavbarList"
+  >
+    <ul
+      className="list flex"
+    >
+      <li
+        className="mr5"
+      >
+        <a
+          aria-current="page"
+          className="NavLink no-underline red active"
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="mr5"
+      >
+        <a
+          className="NavLink no-underline "
+          href="/Calculator"
+          onClick={[Function]}
+        >
+          Calculator
+        </a>
+      </li>
+      <li
+        className="mr5"
+      >
+        <a
+          className="NavLink no-underline "
+          href="/Quote"
+          onClick={[Function]}
+        >
+          Quote
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

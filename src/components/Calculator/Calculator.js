@@ -7,14 +7,15 @@ const Calculator = (props) => {
   const [result, updateResult] = useState('');
   const [error, updateError] = useState('');
   const handleCalculations = (e) => {
-    if (Number.isNaN(Number(e.target.value)) && e.target.value !== 'AC' && e.target.value !== '+/-') {
+    if (Number.isNaN(Number(e.target.value)) && e.target.value !== 'AC') {
       const resultSectionLength = result.length;
-      if (!resultSectionLength) {
-        updateError('Please, add number frist.');
+      if ((!resultSectionLength || result.match(/[+÷x-]$/))
+        && e.target.value === '=') {
+        updateError("you didn't enter a valid operation");
         return;
       }
-      if (!resultSectionLength && e.target.value === '=') {
-        updateError("you didn't enter an operation");
+      if (!resultSectionLength) {
+        updateError('Please, add number frist.');
         return;
       }
     }
@@ -38,9 +39,9 @@ const Calculator = (props) => {
     <>
       <h2 className="ma0 tc mt5 dib w-40 f2">{'Let\'s do some math.'}</h2>
       <div id="calculator">
-        <small className="f5">{error}</small>
+        <small role="note" className="f5">{error}</small>
         <section id="result-section">
-          <span id="result">{!result.length ? 0 : result}</span>
+          <span role="math" id="result">{!result.length ? 0 : result}</span>
         </section>
         <ul id="opertations-section">
           {
