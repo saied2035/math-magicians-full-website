@@ -58,6 +58,11 @@ describe('snapshot', () => {
 
   it('take snapshot', () => {
     expect(calculator).toMatchSnapshot();
+    expect(render(<Calculator
+    symbols={[]}
+    whatToCalculate={whatToCalculate}
+    calculationsHandler={handleCalculations}
+  />)).toMatchSnapshot()
   });
 });
 
@@ -226,5 +231,27 @@ describe('subtraction', () => {
     fireEvent.click(screen.getByText('='));
 
     expect(screen.getByRole('math')).toHaveTextContent('2');
+  });
+});
+
+describe('maltiplcation', () => {
+  it('maltiplcation two numbers 1', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('16');
   });
 });
