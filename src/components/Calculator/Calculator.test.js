@@ -254,4 +254,64 @@ describe('maltiplcation', () => {
 
     expect(screen.getByRole('math')).toHaveTextContent('16');
   });
+
+  it('multiplcation two numbers  2 ', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('1'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('9'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('90');
+  });
+
+  it('multiple subtract', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('5'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('x'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('9'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('360');
+  });
 });
