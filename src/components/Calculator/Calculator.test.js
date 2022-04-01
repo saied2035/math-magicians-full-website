@@ -39,6 +39,7 @@ const renderComponent = () => {
   />);
   return container;
 };
+
 const updateComponent = (whatToCalculate, container) => {
   const newResult = whatToCalculate;
   render(<Calculator
@@ -54,6 +55,7 @@ describe('snapshot', () => {
     whatToCalculate={whatToCalculate}
     calculationsHandler={handleCalculations}
   />);
+
   it('take snapshot', () => {
     expect(calculator).toMatchSnapshot();
   });
@@ -80,7 +82,7 @@ describe('sum', () => {
     expect(screen.getByRole('math')).toHaveTextContent('12');
   });
 
-  test('add two numbers  2 ', async () => {
+  it('add two numbers  2 ', () => {
     const container = renderComponent();
 
     fireEvent.click(screen.getByText('8'));
@@ -104,7 +106,7 @@ describe('sum', () => {
     expect(screen.getByRole('math')).toHaveTextContent('18');
   });
 
-  test('multiple sum', async () => {
+  it('multiple sum', () => {
     const container = renderComponent();
 
     fireEvent.click(screen.getByText('8'));
@@ -138,5 +140,91 @@ describe('sum', () => {
     fireEvent.click(screen.getByText('='));
 
     expect(screen.getByRole('math')).toHaveTextContent('28');
+  });
+});
+
+describe('subtraction', () => {
+  it('subtract two numbers 1', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('6');
+  });
+
+  it('subtract two numbers  2 ', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('8'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('12');
+  });
+
+  it('multiple subtract', () => {
+    const container = renderComponent();
+
+    fireEvent.click(screen.getByText('2'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('0'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('5'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('4'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('-'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('9'));
+
+    updateComponent(whatToCalculate, container);
+
+    fireEvent.click(screen.getByText('='));
+
+    expect(screen.getByRole('math')).toHaveTextContent('2');
   });
 });

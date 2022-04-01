@@ -9,12 +9,12 @@ const Calculator = (props) => {
   const handleCalculations = (e) => {
     if (Number.isNaN(Number(e.target.value)) && e.target.value !== 'AC' && e.target.value !== '+/-') {
       const resultSectionLength = result.length;
-      if (!resultSectionLength) {
-        updateError('Please, add number frist.');
-        return;
-      }
       if (!resultSectionLength && e.target.value === '=') {
         updateError("you didn't enter an operation");
+        return;
+      }
+      if (!resultSectionLength) {
+        updateError('Please, add number frist.');
         return;
       }
     }
