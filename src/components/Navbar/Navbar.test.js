@@ -1,0 +1,14 @@
+import React from "react";
+import renderer from 'react-test-renderer';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Navbar from './Navbar';
+
+it('Check all links are listed', () => {
+    const tree = renderer.create(
+        <Router>
+            <Navbar />
+        </Router>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+})
