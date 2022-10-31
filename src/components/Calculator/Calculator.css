@@ -1,7 +1,10 @@
+.calculator-header {
+    display: none;
+}  
 #calculator {
-  width: 50vw;
-  margin: 2% 2%;
-  float: right;
+  width: 90%;
+  margin: 5%;
+  float: initial;
 }
 
 small {
@@ -48,8 +51,8 @@ button {
   background: #a6a867;
   color: #1b2021;
   font-weight: 600;
-  padding: 1.5rem 0;
-  width: 12.5vw;
+  padding: 1rem 0;
+  width: 22.5vw;
   box-sizing: border-box;
   border-right: 1px solid #561d25;
 }
@@ -60,10 +63,29 @@ button {
 }
 
 .row:last-child > .cell:nth-last-child(3) {
-  width: 25vw;
+  width: 45vw;
 }
 
 span {
   pointer-events: auto;
   cursor: default;
 }
+
+@media screen and (min-width: 580px) {
+.calculator-header {
+    display: inline-block;
+  }  
+  #calculator {
+    width: 60%;
+    margin: 2% 2%;
+    float: right;
+    padding: 0;
+  }
+  .cell {
+    width: 15vw
+  }
+  .row:last-child > .cell:nth-last-child(3) {
+    width: 30vw;
+  }  
+}
+  
