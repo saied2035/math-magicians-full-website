@@ -1,6 +1,7 @@
 .calculator-header {
-    display: none;
-}  
+  display: none;
+}
+
 #calculator {
   width: 90%;
   margin: 5%;
@@ -72,20 +73,23 @@ span {
 }
 
 @media screen and (min-width: 580px) {
-.calculator-header {
+  .calculator-header {
     display: inline-block;
-  }  
+  }
+
   #calculator {
     width: 60%;
     margin: 2% 2%;
     float: right;
     padding: 0;
   }
+
   .cell {
-    width: 15vw
+    width: 15vw;
   }
+
   .row:last-child > .cell:nth-last-child(3) {
     width: 30vw;
-  }  
+  }
 }
-  
+
