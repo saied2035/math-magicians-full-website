@@ -10,3 +10,31 @@ h1 {
   color: #fff;
   font-weight: 600;
 }
+
+.links-container {
+  gap: 0.5rem;
+}
+
+@media screen and (min-width: 255px) {
+  .links-container {
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .links-container {
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .links-container {
+    gap: 4rem;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .links-container {
+    gap: 4rem;
+  }
+}

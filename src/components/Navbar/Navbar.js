@@ -4,21 +4,25 @@ import './Navbar.css';
 const Navbar = () => {
   const { pathname } = useLocation();
   return (
-    <div id="Navbar" className="flex justify-between">
-      <h1 className="ml3">Math Magicians</h1>
-      <nav id="NavbarList" className="mr5 self-center f4 b">
-        <ul className="list flex">
-          <li className="mr5">
+    <div
+      id="Navbar"
+      className="flex flex-row-ns flex-column-m flex-column items-center justify-between-ns justify-start-m
+      justify-start pl3-ns pr6-ns pa0-m pa0"
+    >
+      <h1 className="f2-ns f3-m f3 mb0">Math Magicians</h1>
+      <nav id="NavbarList" className="self-center f4-ns f4-m f5 b">
+        <ul className="links-container list flex pa0">
+          <li>
             <NavLink className={`NavLink no-underline ${pathname === '/' ? 'red' : ''}`} to="/">
               Home
             </NavLink>
           </li>
-          <li className="mr5">
+          <li>
             <NavLink className={`NavLink no-underline ${pathname === '/Calculator' ? 'red' : ''}`} to="Calculator">
               Calculator
             </NavLink>
           </li>
-          <li className="mr5">
+          <li>
             <NavLink className={`NavLink no-underline ${pathname === '/Quote' ? 'red' : ''}`} to="Quote">
               Quote
             </NavLink>
