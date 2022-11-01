@@ -37,8 +37,10 @@ const Calculator = (props) => {
   const { symbols } = props;
   return (
     <>
-      <h2 className="ma0 tc mt5 dib w-40 f2">{'Let\'s do some math.'}</h2>
-      <div id="calculator">
+      <h2 className="calculator-header ma0 tc mt5 f3-ns f4-m" style={{ width: '35%' }}>
+        <strong>{'Let\'s do some Math'}</strong>
+      </h2>
+      <div id="calculator" className="dib fr-ns">
         <small role="note" className="f5">{error}</small>
         <section id="result-section">
           <span role="math" id="result">{!result.length ? 0 : result}</span>
